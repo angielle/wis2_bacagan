@@ -7,35 +7,35 @@
         <table>
             <tr id="row1">
                 <td>
-                    <button>A</button>
+                    <button id="1" class="btn">A</button>
                 </td>
                 <td>
-                    <button>B</button>
+                    <button id="2" class="btn">B</button>
                 </td>
                 <td>
-                    <button>C</button>
+                    <button id="3" class="btn">C</button>
                 </td>
             </tr>
             <tr id="row2">
                 <td>
-                    <button>D</button>
+                    <button id="4" class="btn">D</button>
                 </td>
                 <td>
-                    <button>E</button>
+                    <button id="5" class="btn">E</button>
                 </td>
                 <td>
-                    <button>F</button>
+                    <button id="6" class="btn">F</button>
                 </td>
             </tr>
             <tr id="row3">
                 <td>
-                    <button>G</button>
+                    <button id="7" class="btn">G</button>
                 </td>
                 <td>
-                    <button>H</button>
+                    <button id="8" class="btn">H</button>
                 </td>
                 <td>
-                    <button>I</button>
+                    <button id="9" class="btn">I</button>
                 </td>
             </tr>
         </table>
