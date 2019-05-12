@@ -3,7 +3,6 @@ function switchRight(id) {
     var right = document.getElementById(id+1).innerText;
     document.getElementById(id).innerText = right;
     document.getElementById(id+1).innerText = left;
-
 }
 
 function swapEnds(id) {
@@ -25,8 +24,7 @@ function init() {
 
     btns.forEach((el) => {
         el.addEventListener('click', () => {
-            var id = parseInt(el.id);
-            switch(id) {
+            switch(parseInt(el.id)) {
                 // Left
                 case 1:
                 case 4:
@@ -48,7 +46,6 @@ function init() {
                     switchLeft(id);
                     break;
             }
-
         })
     }) 
 }
