@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="css/style.css" />
-    </head>
-    <body>
-        <table>
-            <tr id="row1">
-                <td>
-                    <button id="1" class="btn">A</button>
-                </td>
-                <td>
-                    <button id="2" class="btn">B</button>
-                </td>
-                <td>
-                    <button id="3" class="btn">C</button>
-                </td>
-            </tr>
-            <tr id="row2">
-                <td>
-                    <button id="4" class="btn">D</button>
-                </td>
-                <td>
-                    <button id="5" class="btn">E</button>
-                </td>
-                <td>
-                    <button id="6" class="btn">F</button>
-                </td>
-            </tr>
-            <tr id="row3">
-                <td>
-                    <button id="7" class="btn">G</button>
-                </td>
-                <td>
-                    <button id="8" class="btn">H</button>
-                </td>
-                <td>
-                    <button id="9" class="btn">I</button>
-                </td>
-            </tr>
-        </table>
+	<head>
+		<link rel="stylesheet" href="css/main.css" crossorigin="anonymous">	
+		<title>Puzzle</title>
+		<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		.grid {
+			display: grid;
+			grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
+			grid-gap: 10px;
+			height: 100vh;
+		}
 
+		.box {
+			padding-top: 20px;
+			font-family: 'Century Gothic';
+			color: white;
+			font-size: 20vh;
+			text-align: center;
+			box-shadow: 2px 2px 2px black;
+		}
+	</head>
+	
+	</style>
+	<body>
+		<div class="grid">
+			<div class="box" id="1" style="background-color: black">A</div>
+			<div class="box" id="2" style="background-color: red">B</div>
+			<div class="box" id="3" style="background-color: orange">C</div>
+			<div class="box" id="4" style="background-color: yellow; color: black">D</div>
+			<div class="box" id="5" style="background-color: green">E</div>
+			<div class="box" id="6" style="background-color: blue">F</div>
+			<div class="box" id="7" style="background-color: indigo">G</div>
+			<div class="box" id="8" style="background-color: violet">H</div>
+			<div class="box" id="9" style="background-color: white; color: black">I</div>
+		</div>
     </body>
-    <script src="js/script.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 </html>
