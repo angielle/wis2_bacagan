@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="css/main.css" crossorigin="anonymous">	
 		<title>Puzzle</title>
 		<style>
 		* {
@@ -39,5 +38,7 @@
 			<div class="box" id="9" style="background-color: white; color: black">I</div>
 		</div>
     </body>
-    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/changed.js"></script>
+    
 </html>
