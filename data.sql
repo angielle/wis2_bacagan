@@ -1,0 +1,52 @@
+INSERT INTO tbl_users(username, password) VALUES("dannah", md5('12345'));
+INSERT INTO tbl_users(username, password) VALUES("james", md5('12345'));
+INSERT INTO tbl_users(username, password) VALUES("ariel", md5('12345'));
+INSERT INTO tbl_users(username, password) VALUES("bob", md5('12345'));
+INSERT INTO tbl_users(username, password) VALUES("lysle", md5('12345'));
+INSERT INTO tbl_users(username, password) VALUES("mae", md5('12345'));
+INSERT INTO tbl_users(username, password) VALUES("seaan", md5('12345'));
+INSERT INTO tbl_users(username, password) VALUES("cecille", md5('12345'));
+INSERT INTO tbl_users(username, password) VALUES("ervina", md5('12345'));
+INSERT INTO tbl_users(username, password) VALUES("percy", md5('12345'));
+INSERT INTO tbl_users(username, password) VALUES("mercy", md5('12345'));
+
+INSERT INTO tbl_personal_info(lname, fname, mname, email, educ_index) VALUES("Bacagan", "Dannah", "Bariring", "bacagandannah@gmail.com", (SELECT educ_index FROM tbl_education JOIN tbl_educ_level ON tbl_education.educ_level=tbl_educ_level.educ_level WHERE tbl_educ_level.level_name="College" AND tbl_education.degree = "BS Physics"));
+INSERT INTO tbl_personal_info(lname, fname, mname, email, educ_index)  VALUES("Dela Cruz", "James", "Miguel", 'jamess@gmail.com', (SELECT educ_index FROM tbl_education JOIN tbl_educ_level ON tbl_education.educ_level=tbl_educ_level.educ_level WHERE tbl_educ_level.level_name="College" AND tbl_education.degree = "BS Biology"));
+INSERT INTO tbl_personal_info(lname, fname, mname, email, educ_index)  VALUES('Navarro', 'Ariel', 'Garcia', 'nariel@gmail.com', (SELECT educ_index FROM tbl_education JOIN tbl_educ_level ON tbl_education.educ_level=tbl_educ_level.educ_level WHERE tbl_educ_level.level_name="College" AND tbl_education.degree = "BS IT"));
+INSERT INTO tbl_personal_info(lname, fname, mname, email, educ_index)  VALUES('Co', 'Bob', 'Sy', 'bobco@gmail.com', (SELECT educ_index FROM tbl_education JOIN tbl_educ_level ON tbl_education.educ_level=tbl_educ_level.educ_level WHERE tbl_educ_level.level_name="Pre-school"));
+INSERT INTO tbl_personal_info(lname, fname, mname, email, educ_index)  VALUES("Go", "Lysle", "Estacio", 'lysle@gmail.com',(SELECT educ_index FROM tbl_education JOIN tbl_educ_level ON tbl_education.educ_level=tbl_educ_level.educ_level WHERE tbl_educ_level.level_name="Elementary"));
+INSERT INTO tbl_personal_info(lname, fname, mname, email, educ_index)  VALUES('Bustillo', 'Mae', 'Sy', 'mae@gmail.com',(SELECT educ_index FROM tbl_education JOIN tbl_educ_level ON tbl_education.educ_level=tbl_educ_level.educ_level WHERE tbl_educ_level.level_name="Master's" AND tbl_education.degree = "MS IT"));
+INSERT INTO tbl_personal_info(lname, fname, mname, email, educ_index)  VALUES("Tira", "Sean", "Cabrera", 'seantira@gmail.com', (SELECT educ_index FROM tbl_education JOIN tbl_educ_level ON tbl_education.educ_level=tbl_educ_level.educ_level WHERE tbl_educ_level.level_name="Doctorate"AND tbl_education.degree = "Doctor of economy" ));
+INSERT INTO tbl_personal_info(lname, fname, mname, email, educ_index)  VALUES("Villanueva", "Cecille", "Estacio", 'cecillev@gmail.com',(SELECT educ_index FROM tbl_education JOIN tbl_educ_level ON tbl_education.educ_level=tbl_educ_level.educ_level WHERE tbl_educ_level.level_name="Senior High School"));
+INSERT INTO tbl_personal_info(lname, fname, mname, email, educ_index)  VALUES("Ladio", "Ervina", "Cepe", "ervinaladio@gmail.com",(SELECT educ_index FROM tbl_education JOIN tbl_educ_level ON tbl_education.educ_level=tbl_educ_level.educ_level WHERE tbl_educ_level.level_name="Master's" AND tbl_education.degree = "MS IT"));
+INSERT INTO tbl_personal_info(lname, fname, mname, email, educ_index)  VALUES("Manzano", "Percy", "Estacio", 'percymanzano@gmail.com',(SELECT educ_index FROM tbl_education JOIN tbl_educ_level ON tbl_education.educ_level=tbl_educ_level.educ_level WHERE tbl_educ_level.level_name="none"));
+INSERT INTO tbl_personal_info(lname, fname, mname, email, educ_index)  VALUES("Manzano", "Mercy", "Estacio", 'mercymanzano@gmail.com',(SELECT educ_index FROM tbl_education JOIN tbl_educ_level ON tbl_education.educ_level=tbl_educ_level.educ_level WHERE tbl_educ_level.level_name="Enlightened One"));
+
+INSERT INTO tbl_education(educ_level, degree) VALUES((SELECT educ_level FROM tbl_educ_level WHERE level_name="College"), "BS IT");
+INSERT INTO tbl_education(educ_level, degree) VALUES((SELECT educ_level FROM tbl_educ_level WHERE level_name="College"), "BS CompSci");
+INSERT INTO tbl_education(educ_level, degree) VALUES((SELECT educ_level FROM tbl_educ_level WHERE level_name="College"), "BS Biology");
+INSERT INTO tbl_education(educ_level, degree) VALUES((SELECT educ_level FROM tbl_educ_level WHERE level_name="College"), "BS Math");
+INSERT INTO tbl_education(educ_level, degree) VALUES((SELECT educ_level FROM tbl_educ_level WHERE level_name="College"), "BS Physics");
+INSERT INTO tbl_education(educ_level, degree) VALUES((SELECT educ_level FROM tbl_educ_level WHERE level_name="Master's"), "MS IT");
+INSERT INTO tbl_education(educ_level, degree) VALUES((SELECT educ_level FROM tbl_educ_level WHERE level_name="Master's"), "MS CompSci");
+INSERT INTO tbl_education(educ_level, degree) VALUES((SELECT educ_level FROM tbl_educ_level WHERE level_name="Master's"), "MBA");
+INSERT INTO tbl_education(educ_level, degree) VALUES((SELECT educ_level FROM tbl_educ_level WHERE level_name="Doctorate"), "Doctor of laws");
+INSERT INTO tbl_education(educ_level, degree) VALUES((SELECT educ_level FROM tbl_educ_level WHERE level_name="Doctorate"), "Doctor of medicine");
+INSERT INTO tbl_education(educ_level, degree) VALUES((SELECT educ_level FROM tbl_educ_level WHERE level_name="Doctorate"), "Doctor of economy");
+INSERT INTO tbl_education(educ_level, degree) VALUES((SELECT educ_level FROM tbl_educ_level WHERE level_name="none"), NULL);
+INSERT INTO tbl_education(educ_level, degree) VALUES((SELECT educ_level FROM tbl_educ_level WHERE level_name="Pre-school"), NULL);
+INSERT INTO tbl_education(educ_level, degree) VALUES((SELECT educ_level FROM tbl_educ_level WHERE level_name="Elementary"), NULL);
+INSERT INTO tbl_education(educ_level, degree) VALUES((SELECT educ_level FROM tbl_educ_level WHERE level_name="Junior High School"), NULL);
+INSERT INTO tbl_education(educ_level, degree) VALUES((SELECT educ_level FROM tbl_educ_level WHERE level_name="Senior High School"), NULL);
+INSERT INTO tbl_education(educ_level, degree) VALUES((SELECT educ_level FROM tbl_educ_level WHERE level_name="Enlightened One"), NULL);
+
+INSERT INTO tbl_educ_level(level_name) VALUES("none");
+INSERT INTO tbl_educ_level(level_name) VALUES("Pre-school");
+INSERT INTO tbl_educ_level(level_name) VALUES("Elementary");
+INSERT INTO tbl_educ_level(level_name) VALUES("Junior High School");
+INSERT INTO tbl_educ_level(level_name) VALUES("Senior High School");
+INSERT INTO tbl_educ_level(level_name) VALUES("College");
+INSERT INTO tbl_educ_level(level_name) VALUES("Master's");
+INSERT INTO tbl_educ_level(level_name) VALUES("Doctorate");
+INSERT INTO tbl_educ_level(level_name) VALUES("Enlightened One");
+
