@@ -58,6 +58,9 @@
 		margin: 5px;
 	}
 
+	#jobTitle {
+		padding-top: 5px;
+	}
 
 
 	</style>
@@ -101,12 +104,9 @@
 				echo '<h5 class="text-center" style="color: white; margin: 20px">'.$job_row['job_title'].'</h5>';
 				echo '</div>';
 			}
-
 			echo '</div>';
     	}
-
-
-	  	?>
+  	?>	
 
 	 <!-- Modal -->
 	<div class="modal fade" id="jobModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -145,6 +145,7 @@
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script>
 $('.job').on('click', function(){
+	// Get variables
 	let jobTitle = $(this).text();
 	let jobDesc = $(this).attr('data-desc');
 	let levelName = $(this).attr('data-lname');
@@ -157,7 +158,6 @@ $('.job').on('click', function(){
 	$('#jobTitle').text(jobTitle);
 	$('#jobDesc').text(jobDesc);
 	(degree == 'N/A') ? $('#levelName').text(levelName) : $('#levelName').text(levelName + ' (' + degree + ')');
-	$('#jobDesc').text(jobDesc);
 	$('#company').text('Job offer from ' + company);
 	$('#logo').attr('src', 'assets/' + logo);
 
