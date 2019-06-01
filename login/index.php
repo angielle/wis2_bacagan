@@ -10,11 +10,9 @@
 
 	.grid-container {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 		grid-template-rows: auto;
 		grid-gap: 10px;
-		grid-template-areas: 
-			"main main main";
 	}
 
 	.mel-1 {
@@ -100,7 +98,7 @@
 			echo '<div class="grid-container">';
 
 			while($job_row = mysqli_fetch_array($job_result)) {
-				echo '<div class="grid-item main job mel-'.$job_row['min_educ_level'].'" data-id="'.$job_row['job_index'].'" data-desc="'.$job_row['job_description'].'" data-company="'.$job_row['company_name'].'" data-logo="'.$job_row['logo_name'].'" data-lname="'.$job_row['level_name'].'" data-deg="'.$job_row['degree'].'" data-logo="'.$job_row['logo_name'].'" data-toggle="modal"  data-target="#jobModal">';
+				echo '<div class="grid-item job mel-'.$job_row['min_educ_level'].'" data-id="'.$job_row['job_index'].'" data-desc="'.$job_row['job_description'].'" data-company="'.$job_row['company_name'].'" data-logo="'.$job_row['logo_name'].'" data-lname="'.$job_row['level_name'].'" data-deg="'.$job_row['degree'].'" data-logo="'.$job_row['logo_name'].'" data-toggle="modal"  data-target="#jobModal">';
 				echo '<h5 class="text-center" style="color: white; margin: 20px">'.$job_row['job_title'].'</h5>';
 				echo '</div>';
 			}
