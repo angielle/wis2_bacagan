@@ -3,9 +3,12 @@
 <head>
 	<title>Index</title>
 	<link rel="stylesheet" href="css/bootstrap.css" crossorigin="anonymous">	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
 	<style>
 	* {
-		padding: 5;
+		margin: 10;
+		font-family: 'Open Sans', sans-serif;
 	}	
 
 	.grid-container {
@@ -16,7 +19,7 @@
 	}
 
 	.mel-1 {
-		background-color:  #A2D729	;
+		background-color:  #A2D729;
 	}
 
 	.mel-2 {
@@ -53,17 +56,51 @@
 	}
 
 	.job {
-		margin: 5px;
+		margin: 7px;
+		height: 150px;
 	}
 
 	#jobTitle {
 		padding-top: 5px;
 	}
 
+	.navbar-contents {
+		margin-left: 30px;
+	}
+
+	.clicked {
+	  transform: scale(1.1);
+	  border-color: #ffc600;
+	  box-shadow: 0 0 1rem #ffc600;
+	}
+
 
 	</style>
 </head>
 <body>
+
+	<!-- Navigation bar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <img src="./assets/logo.png" width="120" />
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse navbar-contents" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	
+	        <li class="nav-item active">
+		        <a class="nav-link" href="#">HOME<span class="sr-only"></span></a>
+		    </li>
+	    </ul>
+	    <div class="my-2 my-lg-0">
+	    	<form class="form-inline">
+	    		<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="searchText">
+	    	</form>
+	    </div>
+	  </div>
+	</nav>
+
 	<?php 		 
 		$conn = new mysqli("localhost", 'root', '', 'wis2_bacagan');
 		session_start();
@@ -99,7 +136,7 @@
 
 			while($job_row = mysqli_fetch_array($job_result)) {
 				echo '<div class="grid-item job mel-'.$job_row['min_educ_level'].'" data-id="'.$job_row['job_index'].'" data-desc="'.$job_row['job_description'].'" data-company="'.$job_row['company_name'].'" data-logo="'.$job_row['logo_name'].'" data-lname="'.$job_row['level_name'].'" data-deg="'.$job_row['degree'].'" data-logo="'.$job_row['logo_name'].'" data-toggle="modal"  data-target="#jobModal">';
-				echo '<h5 class="text-center" style="color: white; margin: 20px">'.$job_row['job_title'].'</h5>';
+				echo '<h5 class="text-center" style="color: white; margin-top: 60px">'.$job_row['job_title'].'</h5>';
 				echo '</div>';
 			}
 			echo '</div>';
@@ -122,9 +159,6 @@
 
 	      	</div>	
 	      </div>
-	      <div>
-	        
-	      </div>
 
 	      <div class="modal-body">
 	      	<p id="jobDesc">Job description</p>
@@ -141,7 +175,9 @@
 </body>
 <script text="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
+
 <script>
+// Add click listeiner to job card
 $('.job').on('click', function(){
 	// Get variables
 	let jobTitle = $(this).text();
@@ -162,5 +198,16 @@ $('.job').on('click', function(){
 	// Change css styles
 	$('.modal-header').css({'background-color': bg, 'color': 'white'});
 })
+
+// Add click listener to search button
+$('#searchText').keypress(function(e){
+	if (e.which == 13) {
+		let query = $('#searchText').val();
+		alert('Search value is "' + query + '"');
+	}
+})
+
+;
 </script>
 </html>
+
