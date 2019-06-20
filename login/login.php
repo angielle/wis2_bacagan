@@ -21,7 +21,15 @@
 		    	<input type="password" class="form-control" name="pw" id="pw" placeholder="Enter password">
 		  	</div>
 
-		  	<button type="submit" name="sub" id="sub" class="btn btn-primary">Submit</button>
+		  	<div class="row">
+			  	<div class="col-sm-6">
+			  		<button type="submit" name="sub" id="sub" class="btn btn-primary">Submit</button>
+			  	</div>
+			  	<div class="col-sm-6">
+			  			<input type="button" value="Register" class="btn btn-success" onclick="window.location.href='register.php'" />
+		
+			  	</div>
+		  	</div>
 		  	
 		  <?php 
 	      		if(!isset($_SESSION)) { 

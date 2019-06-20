@@ -68,28 +68,43 @@
 		margin-left: 30px;
 	}
 
-	.clicked {
-	  transform: scale(1.1);
-	  border-color: #ffc600;
-	  box-shadow: 0 0 1rem #ffc600;
+	.navbar-nav {
+		margin-top: 12px;
 	}
 
 
 	</style>
 </head>
 <body>
+	<?php
+		$conn = new mysqli("localhost", 'root', '', 'wis2_bacagan');
+		session_start();
+ 		$un = $_SESSION['un'];
+	 	if ($conn->connect_error) {
+		    die("Connection failed: " . $conn->connect_error);
+		} 
+
+		$user_query = "SELECT tbl_users.user_index, username, concat(fname, ' ', mname, ' ', lname) as full, tbl_education.educ_level, tbl_personal_info.educ_index, level_name, ifnull(degree,'N/A') as degree, tbl_education.educ_level from tbl_personal_info join tbl_education on tbl_personal_info.educ_index = tbl_education.educ_index join tbl_users on tbl_users.user_index = tbl_personal_info.user_index join tbl_educ_level on tbl_education.educ_level = tbl_educ_level.educ_level where tbl_users.user_index = '$un'";
+
+		$user_result = mysqli_query($conn, $user_query);
+		while($user_row =  mysqli_fetch_array($user_result)) {
+	?>
 
 	<!-- Navigation bar -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  <img src="./assets/logo.png" width="120" />
+	  <img src="./assets/logo.png" width="100" />
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
 
 	  <div class="collapse navbar-collapse navbar-contents" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
-	
-	        <li class="nav-item active">
+	    	<li>
+	    		<?php
+	    			echo "<p class='nav-link active' id='username'>".$user_row['username']."</span></p>";
+	    		?>
+	    	</li>
+	        <li class="nav-item active" style="margin-left: 30px">
 		        <a class="nav-link" href="#">HOME<span class="sr-only"></span></a>
 		    </li>
 	    </ul>
@@ -102,18 +117,6 @@
 	</nav>
 
 	<?php 		 
-		$conn = new mysqli("localhost", 'root', '', 'wis2_bacagan');
-		session_start();
- 		$un = $_SESSION['un'];
-	 	if ($conn->connect_error) {
-		    die("Connection failed: " . $conn->connect_error);
-		} 
-
-		$user_query = "SELECT tbl_users.user_index, username, concat(fname, ' ', mname, ' ', lname) as full, tbl_education.educ_level, tbl_personal_info.educ_index, level_name, ifnull(degree,'N/A') as degree, tbl_education.educ_level from tbl_personal_info join tbl_education on tbl_personal_info.educ_index = tbl_education.educ_index join tbl_users on tbl_users.user_index = tbl_personal_info.user_index join tbl_educ_level on tbl_education.educ_level = tbl_educ_level.educ_level where tbl_users.user_index = '$un'";
-
-		$user_result = mysqli_query($conn, $user_query);
-
-	    while($user_row =  mysqli_fetch_array($user_result)) {
 		    echo "<div class='alert alert-success' role='alert'>";
 		  	echo "<h4 class='alert-heading'>".$user_row['full']."</h4>";
 			echo "<p class='mb-0'>Educational Attainment: ".$user_row['level_name']."</p>";
@@ -143,7 +146,7 @@
     	}
   	?>	
 
-	 <!-- Modal -->
+	<!-- Modal -->
 	<div class="modal fade" id="jobModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
@@ -177,6 +180,7 @@
 <script type="text/javascript" src="js/bootstrap.js"></script>
 
 <script>
+
 // Add click listeiner to job card
 $('.job').on('click', function(){
 	// Get variables
