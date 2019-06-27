@@ -18,6 +18,8 @@
 	Education Level: <select id='educ_levels'></select>
 	<br>
 	Degree: <select id='education'></select>
+	<br>
+	Jobs: <select id='job'></select>
 	</body>
 
 	<script>
@@ -46,7 +48,10 @@
 										url: 'ajax_process.php',
 										data: {
 											todo: 'getJob',
-											
+											educlevel: $('#educ_levels').val()
+										},
+										success: function(data) {
+											$('#job').html(data);
 										}
 									});
 								});
