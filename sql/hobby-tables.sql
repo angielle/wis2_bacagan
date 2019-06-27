@@ -19,9 +19,7 @@ ALTER TABLE recipe_details AUTO_INCREMENT=2000;
 
 CREATE TABLE ingredient (
 	ingredient_id int(5) primary key auto_increment,
-	title varchar(255) not null,
-	amount int not null,
-	unit varchar(25) not null
+	title varchar(255) not null
 );
 
 

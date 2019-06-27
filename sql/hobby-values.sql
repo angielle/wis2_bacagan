@@ -33,15 +33,30 @@ VALUES(
 	'002500'
 );
 
--- Recipe
 INSERT INTO recipe(title, prep_time, bake_time)
 VALUES(
-	'Brownies',
-	'002000	',
-	'001500'
+	'Chocolate muffin',
+	'001500',
+	'003000'
 );
 
+INSERT INTO recipe(title, prep_time, bake_time)
+VALUES(
+	'Cookie bar',
+	'001000',
+	'004000'
+);
 
+INSERT INTO recipe(title, prep_time, bake_time)
+VALUES(
+	'Granola bar',
+	'001500',
+	'005000'
+);
+
+-- RECIPE DETAILS
+
+-- 1 - Brownies
 INSERT INTO recipe_details(rec_id, ingredient_id)
 VALUES(
 	'1000',
@@ -103,7 +118,7 @@ VALUES(
 );
 
 
--- Carrot cake
+-- 2 - Carrot cake
 INSERT INTO recipe_details(rec_id, ingredient_id)
 VALUES(
 	'1001',
@@ -142,16 +157,6 @@ VALUES(
 INSERT INTO recipe_details(rec_id, ingredient_id)
 VALUES(
 	'1001',
-	'3016'
-);
-INSERT INTO recipe_details(rec_id, ingredient_id)
-VALUES(
-	'1001',
-	'3017'
-);
-INSERT INTO recipe_details(rec_id, ingredient_id)
-VALUES(
-	'1001',
 	'3004'
 );
 INSERT INTO recipe_details(rec_id, ingredient_id)
@@ -161,7 +166,7 @@ VALUES(
 );
 
 
--- Cookies
+-- 3 - Cookies
 INSERT INTO recipe_details(rec_id, ingredient_id)
 VALUES(
 	'1002',
@@ -185,7 +190,7 @@ VALUES(
 INSERT INTO recipe_details(rec_id, ingredient_id)
 VALUES(
 	'1002',
-	'3018'
+	'3015'
 );
 INSERT INTO recipe_details(rec_id, ingredient_id)
 VALUES(
@@ -198,7 +203,7 @@ VALUES(
 	'3011'
 );
 
--- Crinkles
+-- 4 - Crinkles
 INSERT INTO recipe_details(rec_id, ingredient_id)
 VALUES(
 	'1003',
@@ -207,7 +212,7 @@ VALUES(
 INSERT INTO recipe_details(rec_id, ingredient_id)
 VALUES(
 	'1003',
-	'3016'
+	'3006'
 );
 INSERT INTO recipe_details(rec_id, ingredient_id)
 VALUES(
@@ -224,53 +229,51 @@ VALUES(
 	'1003',
 	'3005'
 );
-INSERT INTO recipe_details(rec_id, ingredient_id)
-VALUES(
-	'1003',
-	'3019'
-);
 
--- Red velvet cake
+
+-- 5 - Crinkles
 INSERT INTO recipe_details(rec_id, ingredient_id)
 VALUES(
 	'1004',
 	'3003'
 );
+
 INSERT INTO recipe_details(rec_id, ingredient_id)
 VALUES(
 	'1004',
-	'3016'
+	'3015'
 );
+
 INSERT INTO recipe_details(rec_id, ingredient_id)
 VALUES(
 	'1004',
 	'3014'
 );
+
 INSERT INTO recipe_details(rec_id, ingredient_id)
 VALUES(
 	'1004',
 	'3004'
 );
+
 INSERT INTO recipe_details(rec_id, ingredient_id)
 VALUES(
 	'1004',
 	'3011'
 );
+
 INSERT INTO recipe_details(rec_id, ingredient_id)
 VALUES(
 	'1004',
-	'3020'
+	'3008'
 );
-INSERT INTO recipe_details(rec_id, ingredient_id)
-VALUES(
-	'1004',
-	'3021'
-);
+
 INSERT INTO recipe_details(rec_id, ingredient_id)
 VALUES(
 	'1004',
 	'3005'
 );
+
 INSERT INTO recipe_details(rec_id, ingredient_id)
 VALUES(
 	'1004',
@@ -278,166 +281,232 @@ VALUES(
 );
 
 
+-- 6 - Chocolate Muffin
+INSERT INTO recipe_details(rec_id, ingredient_id)
+VALUES(
+	'1005',
+	'3003'
+);
+
+INSERT INTO recipe_details(rec_id, ingredient_id)
+VALUES(
+	'1005',
+	'3000'
+);
+
+INSERT INTO recipe_details(rec_id, ingredient_id)
+VALUES(
+	'1005',
+	'3015'
+);
+
+INSERT INTO recipe_details(rec_id, ingredient_id)
+VALUES(
+	'1005',
+	'3002'
+);
+
+INSERT INTO recipe_details(rec_id, ingredient_id)
+VALUES(
+	'1005',
+	'3007'
+);
+
+INSERT INTO recipe_details(rec_id, ingredient_id)
+VALUES(
+	'1005',
+	'3006'
+);
+
+INSERT INTO recipe_details(rec_id, ingredient_id)
+VALUES(
+	'1005',
+	'3009'
+);
+
+-- 7- Cookie bar
+INSERT INTO recipe_details(rec_id, ingredient_id)
+VALUES(
+	'1006',
+	'3007'
+);
+
+INSERT INTO recipe_details(rec_id, ingredient_id)
+VALUES(
+	'1006',
+	'3011'
+);
+
+INSERT INTO recipe_details(rec_id, ingredient_id)
+VALUES(
+	'1006',
+	'3006'
+);
+
+INSERT INTO recipe_details(rec_id, ingredient_id)
+VALUES(
+	'1006',
+	'3004'
+);
+
+INSERT INTO recipe_details(rec_id, ingredient_id)
+VALUES(
+	'1006',
+	'3002'
+);
+
+INSERT INTO recipe_details(rec_id, ingredient_id)
+VALUES(
+	'1006',
+	'3001'
+);
+
+INSERT INTO recipe_details(rec_id, ingredient_id)
+VALUES(
+	'1006',
+	'3003'
+);
+
+INSERT INTO recipe_details(rec_id, ingredient_id)
+VALUES(
+	'1006',
+	'3005'
+);
+
+INSERT INTO recipe_details(rec_id, ingredient_id)
+VALUES(
+	'1006',
+	'3009'
+);
+
+-- 8 - Granola bar
+INSERT INTO recipe_details(rec_id, ingredient_id)
+VALUES(
+	'1007',
+	'3018'
+);
+
+INSERT INTO recipe_details(rec_id, ingredient_id)
+VALUES(
+	'1007',
+	'3004'
+);
+
+INSERT INTO recipe_details(rec_id, ingredient_id)
+VALUES(
+	'1007',
+	'3019'
+);
+
 -- INGREDIENTS
-INSERT INTO ingredient(title, amount, unit)
+INSERT INTO ingredient(title)
 VALUES(
-	"Vegetable oil",
-	"2",
-	"tablespoons"
+	"Vegetable oil"
 );
 
-INSERT INTO ingredient(title, amount, unit)
+INSERT INTO ingredient(title)
 VALUES(
-	"White sugar",
-	"260",
-	"g"
+	"White sugar"
 );
 
-INSERT INTO ingredient(title, amount, unit)
+INSERT INTO ingredient(title)
 VALUES(
-	"Brown sugar",
-	"1",
-	"cup"
+	"Brown sugar"
 );
 
-INSERT INTO ingredient(title, amount, unit)
+INSERT INTO ingredient(title)
 VALUES(
-	"Eggs",
-	"4",
-	"units"
+	"Eggs"
 );
 
-INSERT INTO ingredient(title, amount, unit)
+INSERT INTO ingredient(title)
 VALUES(
-	"Butter",
-	"240",
-	"grams"
+	"Butter"
 );
 
-INSERT INTO ingredient(title, amount, unit)
+INSERT INTO ingredient(title)
 VALUES(
-	"Vanilla extract",
-	"1",
-	"tablespoon"
+	"Vanilla extract"
 );
 
-INSERT INTO ingredient(title, amount, unit)
+INSERT INTO ingredient(title)
 VALUES(
-	"Salt",
-	"3/4",
-	"teaspoon"
+	"Salt"
 );
 
-INSERT INTO ingredient(title, amount, unit)
+INSERT INTO ingredient(title)
 VALUES(
-	"All purpose flour",
-	"1",
-	"cup"
+	"All purpose flour"
 );
 
-INSERT INTO ingredient(title, amount, unit)
+INSERT INTO ingredient(title)
 VALUES(
-	"Cocoa powder",
-	"1",
-	"cup"
+	"Cocoa powder"
 );
 
-INSERT INTO ingredient(title, amount, unit)
+INSERT INTO ingredient(title)
 VALUES(
-	"Chocolate chips",
-	"7",
-	"ounce"
+	"Chocolate chips"
 );
 
 
-INSERT INTO ingredient(title, amount, unit)
+INSERT INTO ingredient(title)
 VALUES(
-	"All purpose flour",
-	"2 1/4",
-	"cups"
+	"Baking powder"
 );
 
-
-INSERT INTO ingredient(title, amount, unit)
+INSERT INTO ingredient(title)
 VALUES(
-	"Baking powder",
-	"2",
-	"teaspons"
+	"Baking soda"
 );
 
-INSERT INTO ingredient(title, amount, unit)
+INSERT INTO ingredient(title)
 VALUES(
-	"Baking soda",
-	"1",
-	"teaspon"
+	"Cinnamon"
+
+INSERT INTO ingredient(title)
+VALUES(
+	"Ginger"
 );
 
-INSERT INTO ingredient(title, amount, unit)
+INSERT INTO ingredient(title)
 VALUES(
-	"Cinnamon",
-	"2",
-	"teaspons"
+	"Carrots"
 );
 
-INSERT INTO ingredient(title, amount, unit)
+INSERT INTO ingredient(title)
 VALUES(
-	"Ginger",
-	"1",
-	"teaspon"
+	"Confectioner's sugar"
 );
 
-INSERT INTO ingredient(title, amount, unit)
+INSERT INTO ingredient(title)
 VALUES(
-	"Vegetable oil",
-	"1",
-	"cup"
+	"Red food colouring"
 );
 
-INSERT INTO ingredient(title, amount, unit)
+INSERT INTO ingredient(title)
 VALUES(
-	"Brown sugar",
-	"1",
-	"cup"
+	"Buttermilk"
 );
 
-INSERT INTO ingredient(title, amount, unit)
+INSERT INTO ingredient(title)
 VALUES(
-	"White sugar",
-	"1",
-	"cup"
+	"Oats"
 );
 
-INSERT INTO ingredient(title, amount, unit)
+INSERT INTO ingredient(title)
 VALUES(
-	"Carrots",
-	"2 1/2",
-	"cups"
+	"Rice cereal"
 );
 
+INSERT INTO ingredient(title)
+VALUES(
+	"Flaxseed"
+);
 
-INSERT INTO ingredient(title, amount, unit)
+INSERT INTO ingredient(title)
 VALUES(
-	"Egg",
-	"1",
-	"unit"
-);
-INSERT INTO ingredient(title, amount, unit)
-VALUES(
-	"Confectioner's sugar",
-	"1/4",
-	"cup"
-);
-INSERT INTO ingredient(title, amount, unit)
-VALUES(
-	"Red food colouring",
-	"45",
-	"ml"
-);
-INSERT INTO ingredient(title, amount, unit)
-VALUES(
-	"Buttermilk",
-	"1",
-	"cup"
+	"Honey"
 );
 
 SELECT recipe.title as 'Title', prep_time as 'Prep time', bake_time as 'Bake time', group_concat(ingredient.title) as 'Ingredients' FROM recipe
