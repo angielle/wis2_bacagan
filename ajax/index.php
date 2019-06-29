@@ -41,19 +41,24 @@
 								educlevel: $('#educ_levels').val()
 							},
 							success: function(data) {
-								$('#education').html(data);
+								$('#education').html(data);								
 								$(function() {
-									$.ajax({
-										type: 'POST',
-										url: 'ajax_process.php',
-										data: {
-											todo: 'getJob',
-											educlevel: $('#educ_levels').val()
-										},
-										success: function(data) {
-											$('#job').html(data);
-										}
+									$('#education').on('change', function() {
+										$.ajax({
+											type: 'POST',
+											url: 'ajax_process.php', 
+											data: {
+												todo: 'getJob',
+												educlevel: $('#educ_levels').val(),
+												educindex: $('#education').val()
+											},
+											success: function(data) {
+												$('#job').html(data);
+											}
+										});
+
 									});
+									
 								});
 							}
 						});
