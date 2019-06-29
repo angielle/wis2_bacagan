@@ -1,1 +1,0 @@
-SELECT job_index, job_title from job_list join tbl_education on job_list.educ_index=tbl_education.educ_index join tbl_educ_level on tbl_educ_level.educ_level=tbl_education.educ_level where (job_list.educ_index=$EL or tbl_education.educ_level<$EL);

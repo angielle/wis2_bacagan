@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>JOBS</title>
+		<title>AJAX Jobs</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
@@ -11,7 +11,6 @@
 		html {
 			font-family: 'Lato', sans-serif;
 			font-size: 16;
-		}
 	</style>
 	<body>
 
@@ -56,9 +55,7 @@
 												$('#job').html(data);
 											}
 										});
-
-									});
-									
+									});									
 								});
 							}
 						});
