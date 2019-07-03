@@ -42,7 +42,7 @@
 							success: function(data) {
 								$('#education').html(data);								
 								$(function() {
-									$('#education').on('change', function() {
+									$('#education, #educ_levels').change(function() {
 										$.ajax({
 											type: 'POST',
 											url: 'ajax_process.php', 
