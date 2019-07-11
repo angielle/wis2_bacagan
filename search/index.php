@@ -17,9 +17,10 @@
             <input type="text" placeholder="Enter search.." id="nameInput"/>       
         </div>
     
-        <h4>Results of query</h4>
+        <h4 class="results-text">Results of query</h4>
         <div id="results">
         </div>
+      
 
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         
@@ -36,7 +37,7 @@
                             nameInput: $nameInput
                         },
                         success: function(data) {
-                            $('#results').html(data);
+                        $('#results').html(data);
                         }
                     })            
                 }
