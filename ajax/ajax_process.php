@@ -31,7 +31,6 @@
 			$options = $options."<option value='".$row['educ_index']."'>".$row['degree']."</option>";
 
 		}
-		$EL = '';
 		echo $options;
 
 	} else if (isset($_POST['todo']) && $_POST['todo'] == 'getJob') {
@@ -41,11 +40,12 @@
 		echo "<script>console.log( 'Educ level: " . $EL . "' );</script>";
 		echo "<script>console.log( 'Educ index: " . $EI . "' );</script>";
 		if ($EL < 6) {
-			$qry = "SELECT job_index, job_title from job_list where (educ_index=$EI or min_educ_level<6);";
+			$qry = "SELECT job_index, job_title from job_list where (min_educ_level<=$EL) order by min_educ_level desc;";
+
 		} else if ($EL == 9) {
-			$qry = "SELECT job_index, job_title from job_list where (educ_index=$EI or min_educ_level<=$EL);";
+			$qry = "SELECT job_index, job_title from job_list where (educ_index=$EI or min_educ_level<=$EL) order by min_educ_level desc;";
 		} else {
-			$qry = "SELECT job_index, job_title from job_list where (educ_index=$EI or min_educ_level<$EL);";
+			$qry = "SELECT job_index, job_title from job_list where (educ_index=$EI or min_educ_level<$EL) order by min_educ_level desc;";
 		}
 
 	
