@@ -34,7 +34,7 @@ h7 {
 nav {
 	background: #232422;
 	height: 50px;
-	padding: 10px 5px;
+	padding: 10px 10px;
 }
 
 nav > a {
@@ -45,6 +45,10 @@ a {
 	text-decoration: none;
 	color: #ffffff;
 	width:80%;
+}
+
+a.active {
+	color: #C6426E;
 }
 
 body {

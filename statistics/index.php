@@ -13,7 +13,7 @@
 
     <body>
     	<nav>
-    		<a href="">Company Statistics</a>
+    		<a href="" class="active">Company Statistics</a>
     		<a href="">Employee Count</a>
     		<a href="">Employee Salaries</a>
     	</nav>
@@ -54,26 +54,38 @@
     		</div>	
 		</section>
     	<script type="text/javascript">
-    		$("#dept").change(function() {
-    			var $select = $(this);
+    		$(document).ready(function() {
+    			$('a').click(function(e) {
+    				$('a.active').removeClass('active')
+    				debugger;
 
-    			$.ajax({
-    				url: 'process.ph',
-    				type: 'post',
-		            success:function(response){
-		                var len = response.length;
-
-		                $("#dept").empty();
-		                for( var i = 0; i<len; i++){
-		                    var no = response[i]['no'];
-		                    var name = response[i]['name'];
-		                    
-		                    $("#dept").append("<option value='"+no+"'>"+name+"</option>");
-
-		                }
-		            }
+    				var $parent = $(this).parent();
+    				$parent.addClass('active');
+    				e.preventDefault();
     			})
-    		})
+    		});
+
+    		// $("#dept").change(function() {
+    		// 	var $select = $(this);
+
+    		// 	$.ajax({
+    		// 		url: 'process.ph',
+    		// 		type: 'post',
+    		// 		data:{dept_no:dept_no},
+		    //         success:function(response){
+		    //             var len = response.length;
+
+		    //             $("#dept").empty();
+		    //             for( var i = 0; i<len; i++){
+		    //                 var no = response[i]['no'];
+		    //                 var name = response[i]['name'];
+		                    
+		    //                 $("#dept").append("<option value='"+no+"'>"+name+"</option>");
+
+		    //             }
+		    //         }
+    		// 	})
+    		// })
     	</script>
     </body>
 

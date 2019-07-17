@@ -1,6 +1,8 @@
 <?php 
 
-	$(document).ready(function() {
+	
+	if (isset($_POST['dept_no'])) {
+
 		$conn = new mysqli("localhost", 'root', '', 'company');
 		session_start();
 	 	if ($conn->connect_error) {
@@ -15,9 +17,9 @@
 			$no = $row['dept_no'];
 			$name = $row['dept_name']
 
-			$dept_arr[] = array('no' => $no, 'name' => $name)
+			echo '<option value="'.$row->dept_no.'">'.$row->dept_name.'</option>';
 		}
-		echo json_encode($dept_arr);
-	})
+	}
+	
 	
 ?>
