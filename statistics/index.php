@@ -53,7 +53,28 @@
 	    		</div>
     		</div>	
 		</section>
-    	
+    	<script type="text/javascript">
+    		$("#dept").change(function() {
+    			var $select = $(this);
+
+    			$.ajax({
+    				url: 'process.ph',
+    				type: 'post',
+		            success:function(response){
+		                var len = response.length;
+
+		                $("#dept").empty();
+		                for( var i = 0; i<len; i++){
+		                    var no = response[i]['no'];
+		                    var name = response[i]['name'];
+		                    
+		                    $("#dept").append("<option value='"+no+"'>"+name+"</option>");
+
+		                }
+		            }
+    			})
+    		})
+    	</script>
     </body>
 
 </html>

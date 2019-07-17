@@ -34,6 +34,7 @@ h7 {
 nav {
 	background: #232422;
 	height: 50px;
+	padding: 10px 5px;
 }
 
 nav > a {
@@ -112,6 +113,7 @@ button[type='button'] {
  	display: flex;
   	align-items: center;
   	justify-content: center;
+  	margin-top: 15px;
 }
 
 .submit-btn {
