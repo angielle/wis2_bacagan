@@ -30,13 +30,14 @@ h7 {
 	font-size: 13px;
 }
 
+
 /* Navigation bar */
 nav {
 	background: #232422;
-	height: 50px;
-	padding: 10px 10px;
+	height: 30px;
+	padding: 30px 10px;
 }
-
+ 
 nav > a {
 	margin-right: 40px;
 }
@@ -44,7 +45,14 @@ nav > a {
 a {
 	text-decoration: none;
 	color: #ffffff;
-	width:80%;
+	width: 80%;
+	font-size: 18px;
+	margin-left: 50px;
+}
+
+
+a:hover {
+	cursor: hand;
 }
 
 a.active {
@@ -61,13 +69,8 @@ body {
 
 .card-container {
 	position: absolute;
-  	top: 40%;
-  	left: 50%;
   	width: 400px;
-  	height: 600px;
-  	margin-top: -200px;
- 	margin-left: -200px;
- 	border-radius: 15px;
+  	height: 100%;
 	box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.2);
 	overflow: hidden;
   	background: #fff;
@@ -75,7 +78,7 @@ body {
 }
 
 .card{
-	margin: 0px 20px;
+	margin: 0px 30px;
 }
 
 select {
@@ -107,10 +110,12 @@ input[type='checkbox'] {
 }
 
 button[type='button'] {
-	padding: 8px 20px;
+	padding: 10px 25px;
 	background-color: #0f0f0f; 
+	border: 1px solid #0f0f0f;
 	color:  #ffffff;
 	display: block;
+	letter-spacing: 3px;
 }
 
 .button-container {
