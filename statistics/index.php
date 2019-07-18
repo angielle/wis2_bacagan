@@ -25,25 +25,10 @@
 
 		    		<h5>Department</h5>
 		    		<select id="dept">
-		    			<option value="all">All</option>
-					    <?php
-						 	$conn = new mysqli("localhost", 'root', '', 'company');
-							$dept_sql = "SELECT * FROM departments;";
-							$dept_res = mysqli_query($conn, $dept_sql);
-
-							while ($row = mysqli_fetch_assoc($dept_res)) {
-								$dept_no = $row['dept_no'];
-								$dept_name = $row['dept_name'];
-
-								echo "<option value='".$dept_no."'>".$dept_name."</option>";
-							}
-						  ?>
 					</select>
 
 					<h5>Title</h5>
 		    		<select id="title">
-		    			<option value="all">All</option>
-
 					    <?php
 							$title_sql = "SELECT DISTINCT title FROM titles;";
 							$title_res = mysqli_query($conn, $title_sql);
@@ -59,7 +44,7 @@
 					<p>From</p>
 					<input type="date" name="date_from" value="1985-01-01" min="1985-01-01" max="2002-08-01">
 					<p>To</p>
-					<input type="date" name="date_to" value="1985-02-17" min="1985-02-17" max="9999-01-01">
+					<input type="date" name="date_to" value="2002-08-01" min="1985-02-17" max="2002-08-01">
 
 					<input type="checkbox" name="current"> Current
 
@@ -90,8 +75,10 @@
 			 	$("input[type='checkbox']").click(function(){
 		            if($(this).is(":checked")){
 	                	$("input[name='date_to']").val("9999-01-01");
+	                	$("input[name='date_to']").prop('disabled', true);
 	            	} else {
 	            		$("input[name='date_to']").val("1985-02-17");
+	            		$("input[name='date_to']").prop('disabled', false);
 	            	}
 	       		});	
 
@@ -103,14 +90,39 @@
 		           	$title_val = $("#title option:selected").val();
 		           	$title_name = $("#title option:selected").text();
 
-		           	$date_from = $("input[name='date_to']").val();
-		           	$date_to = $("input[name='date_from'").val();
+		           	$date_from = $("input[name='date_from']").val();
+		           	$date_to = $("input[name='date_to'").val();
 
-		           	alert($dept_name + ", " + $title_name + ", " + $date_from + ", " + $date_to);
+		           	alert("Departments - " + $dept_name + "| Title - " + $title_name + "| Date from - " + $date_from + "| Date to - " + $date_to);
 	       		});	
 
+	       		// Values
+	       		$.ajax({
+					type: 'POST',
+					url: 'process.php',
+					data: {
+						todo: 'getDept'
+					},
+					success: function (data) {
+						$('#dept').html(data);
+						$(function(){
+							$('#dept').on('change', function() {
+								$.ajax({
+									type: 'POST',
+									url: 'process.php',
+									data: {
+										todo: 'getTitle',
+										dept: $('#dept').val()
+									},
+									success: function(data) {
+										$('#title').html(data);								
+									}
+								});
+							});
+						});
+					} 
+				});
     		})
-
 
 
     	</script>
